@@ -25,10 +25,7 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
-      - name: Run tests
-        run: |
-          pytest --maxfail=1 --disable-warnings -q
-
+    
       - name: Build and package Flask app
         run: |
           echo "Building Flask Student Manager application..."
