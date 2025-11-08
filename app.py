@@ -16,6 +16,9 @@ class Student(db.Model):
     roll = db.Column(db.String(100), nullable=False)
     student_class = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), nullable=False)
+     
+    with app.app_context():
+        db.create_all()  
 
 # ************ ROUTES ***************
 
@@ -83,6 +86,5 @@ def contact():
 
 # ************ MAIN ***************
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()  # creates DB tables if not present
+   # creates DB tables if not present
     app.run(debug=True)
